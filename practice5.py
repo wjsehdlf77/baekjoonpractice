@@ -1,9 +1,8 @@
 # baekjoon2558번
 
-n = int(input())
-num = [input() for n in range(n)]
+a = int(input())
+b = int(input())
 
-print(num)
-
+print(a + b)
 
 
