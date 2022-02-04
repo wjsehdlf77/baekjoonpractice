@@ -1,6 +1,6 @@
 # 10039번
 
-from audioop import avg
+
 
 
 score =[]
