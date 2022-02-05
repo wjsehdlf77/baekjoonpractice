@@ -21,25 +21,30 @@
 #각 물건은 무게W 와 가치V == 준서의 행복V
 #준서는 K까지밖에 들수 없다
 
-from sys import stdin
-
-case, weight_jun = map(int, stdin.readline().split())
-
-article_dic = {}
-
-for a in range(1, case + 1):
-
-    weight_article, value = map(int, stdin.readline().split())
+# from sys import stdin
 
 
-    article_dic.update({f'article{a}' : [weight_article, value]})
-
-print(article_dic['article1'])
-    
-    
 
 
-    
+# def value_jun(weight_article, value):
+#     value_total = 0
+#     weight_article_total = 0
+#     if weight_article_total + weight_article <= weight_jun:
+#         weight_article_total += weight_article
+
+
+
+
+
+
+# case, weight_jun = map(int, stdin.readline().split())
+
+
+
+# for a in range(case):
+
+#     weight_article, value = map(int, stdin.readline().split())
+
 
 
 
