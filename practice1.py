@@ -17,33 +17,59 @@
 #출력
     # 한 줄에 배낭에 넣을 수 있는 물건들의 가치합의 최댓값을 출력한다.
 
+from sys import stdin
 
-#각 물건은 무게W 와 가치V == 준서의 행복V
-#준서는 K까지밖에 들수 없다
-
-# from sys import stdin
-
-
-
-
-# def value_jun(weight_article, value):
-#     value_total = 0
-#     weight_article_total = 0
-#     if weight_article_total + weight_article <= weight_jun:
-#         weight_article_total += weight_article
+def knapsack(capacity, n):
+    if capacity ==0 or n == 0:
+        return 0
+    
+    if weight[n-1] > capacity:
+        return knapsack(capacity, n-1)
+    else:
+        return max(value[n-1] + knapsack(capacity-weight[n-1], n-1), knapsack(capacity, n-1))
 
 
 
 
+N, K = map(int, stdin.readline().split())
+
+weight = []
+value = []
+
+for ix in range(N):
+    A, B = map(int,stdin.readline().split())
+    weight.append(A)
+    value.append(B)
+
+print(knapsack(K, N))
 
 
-# case, weight_jun = map(int, stdin.readline().split())
+
+    
+
+
+        
+
+
+    
+
+        
 
 
 
-# for a in range(case):
 
-#     weight_article, value = map(int, stdin.readline().split())
+
+
+        
+
+    
+
+    
+
+
+
+
+
 
 
 
