@@ -19,33 +19,61 @@
 
 from sys import stdin
 
-def knapsack(capacity, n):
-    if capacity ==0 or n == 0:
-        return 0
+# def knapsack(capacity, n):
+#     if capacity ==0 or n == 0:
+#         return 0
     
-    if weight[n-1] > capacity:
-        return knapsack(capacity, n-1)
-    else:
-        return max(value[n-1] + knapsack(capacity-weight[n-1], n-1), knapsack(capacity, n-1))
+#     if weight[n-1] > capacity:
+#         return knapsack(capacity, n-1)
+#     else:
+#         return max(value[n-1] + knapsack(capacity-weight[n-1], n-1), knapsack(capacity, n-1))
 
 
 
 
 N, K = map(int, stdin.readline().split())
 
-weight = []
-value = []
+# weight = [0]
+# value = [0]
+
+# dp = [0]*10
+
+
+# for ix in range(N):
+#     A, B = map(int,stdin.readline().split())
+#     weight.append(A)
+#     value.append(B)
+
+# print(knapsack(K, N))
+
+
+
+def Knapsack(capacity, n):
+
+    
+    for a in range(1, n+1):
+        return max(W_V_list[a][1]+Knapsack(capacity-W_V_list[a][0]),Knapsack(capacity, ))
+
+
+
+
+W_V_list = [[0,0]]
 
 for ix in range(N):
-    A, B = map(int,stdin.readline().split())
-    weight.append(A)
-    value.append(B)
+    M, V = map(int, stdin.readline().split())
 
-print(knapsack(K, N))
+    W_V_list.append([M,V])
+
+    
+         
+
+
+    
 
 
 
     
+
 
 
         
