@@ -17,7 +17,7 @@
 #출력
     # 한 줄에 배낭에 넣을 수 있는 물건들의 가치합의 최댓값을 출력한다.
 
-from sys import stdin
+# from sys import stdin
 
 # def knapsack(capacity, n):
 #     if capacity ==0 or n == 0:
@@ -31,7 +31,7 @@ from sys import stdin
 
 
 
-N, K = map(int, stdin.readline().split())
+# N, K = map(int, stdin.readline().split())
 
 # weight = [0]
 # value = [0]
@@ -48,21 +48,40 @@ N, K = map(int, stdin.readline().split())
 
 
 
-def Knapsack(capacity, n):
-
-    
-    for a in range(1, n+1):
-        return max(W_V_list[a][1]+Knapsack(capacity-W_V_list[a][0]),Knapsack(capacity, ))
 
 
+from sys import stdin
+
+N, K = map(int, stdin.readline().split())
+
+weight = []
+value = []
+dp = [0] * (K + 1)
+
+for _ in range(N):
+    W, V = map(int, stdin.readline().split())
+    weight.append(W)
+    value.append(V)
+
+def Knapsack(weight, value, capacity, n):
+
+    dp = [0 for i in range(capacity + 1)]
+    for i in range(n):
+        now = weight[i]
+        for w in range(capacity, 0, -1):
+            if now <= w:
+                dp[w] = max(dp[w], dp[w-now]+value[i])
+    return print(dp[K])
+Knapsack(weight, value, K, N)
 
 
-W_V_list = [[0,0]]
 
-for ix in range(N):
-    M, V = map(int, stdin.readline().split())
 
-    W_V_list.append([M,V])
+
+
+
+
+
 
     
          
