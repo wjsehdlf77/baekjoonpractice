@@ -1,4 +1,14 @@
+#10214
 
-# 입력예제
-# 10
-# 1 2 0 1 3 2 1 5 4 2
+from sys import stdin
+
+t = int(stdin.readline())
+
+
+yon = 0
+
+ko = 0
+
+num = 0
+
+for i in range(1, (t * 9) + 1):
