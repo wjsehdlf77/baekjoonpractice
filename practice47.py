@@ -16,3 +16,5 @@ for _ in range(n):
     data.append(row)
 
 while True:
+    for i in range(3):
+        
