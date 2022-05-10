@@ -23,8 +23,11 @@ def count(num):
     elif num < 0:
         return 0
     dp[num] = count(num - 1) + count(num - 2) + count(num - 3)
+    
 
-print(count(4))
+for i in data:
+    count(i)
+    print(dp[i])
     
 
 
