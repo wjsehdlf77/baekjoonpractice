@@ -1,39 +1,40 @@
 #15988
 
 from sys import stdin
- 
+
+
+def count(data):
+    dp = [0] * (data + 1)
+    
+    if data == 1:
+        return 1
+    elif data == 2:
+        return 2
+    elif data == 3:
+        return 4
+    if dp[data] != 0:
+        return 0
+    return count(data - 1) + count(data - 2) + count(data - 3)
+
+    
 
 t = int(stdin.readline())
 
-data = []
-
 for _ in range(t):
-    data.append(int(stdin.readline()))
-
-dp = [0] * (max(data) + 1)
-# dp[1] = 1
-# dp[2] = 2
-# dp[3] = 3
-
-# for i in range(4, max(data) + 1)
-
-def count(num):
-    if num == 0:
-        return 1
-    elif num < 0:
-        return 0
-    dp[num] = count(num - 1) + count(num - 2) + count(num - 3)
-    
-
-for i in data:
-    count(i)
-    print(dp[i])
+    data = int(stdin.readline())
+    print(count(data))
     
 
 
 
 
-# for i in data:
-#     print([dp[i]])
+    
 
 
+
+
+
+# 3
+# 4
+# 7
+# 10
